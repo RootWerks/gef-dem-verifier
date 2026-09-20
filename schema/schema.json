@@ -6,7 +6,9 @@
     "delta_max": { "type": "integer" },
     "witness_token": { "type": "string", "minLength": 1 },
     "revocation_list_valid": { "type": "boolean" },
-    "semantic_category": { "type": "string" }
+    "semantic_category": { "type": "string" },
+    "epoch_drift_detected": { "type": "boolean" },
+    "expect_pass": { "type": "boolean" }
   },
   "required": ["delta", "delta_max", "witness_token", "revocation_list_valid", "semantic_category"]
 }
