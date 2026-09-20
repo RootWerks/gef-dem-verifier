@@ -1,21 +1,28 @@
 name: Enterprise CEX / z/OS Co-Processor Inquiry
 description: Architecture audit briefing request for sovereign mainframe deployments.
-title: "[AUDIT-BRIEFING]: "
+title: "[Audit Briefing]: "
+labels:
+  - audit-inquiry
+  - compliance
 body:
   - type: input
+    id: institution
     attributes:
       label: Institution / LPAR Context
+      placeholder: "e.g., GlobalBank / PRD-LPAR-04 / SYSP"
     validations:
       required: true
   - type: dropdown
+    id: enforcement_target
     attributes:
       label: Cryptographic / Enforcement Target
       options:
-        - IBM z16 CEX8S / ICSF
-        - XCF Memory Bypass Intercept
-        - SMF 139-byte Tombstone Pipeline Audit
+        - 0xF505 (Statutory Hard-Stop)
+        - 0xF003 (Epistemic Drift / Delta Bound)
+        - CEX8S / ICSF Dual-Coprocessor Intercept
+        - RRS 2PC PREPARE Gate
   - type: textarea
+    id: delta_req
     attributes:
       label: Compliance / Drift Threshold Requirements (delta_max)
-    validations:
-      required: false
+      placeholder: "Specify delta_max bounds, SMF tombstone retention rules, or regulatory framework overlay..."
