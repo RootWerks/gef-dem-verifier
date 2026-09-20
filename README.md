@@ -1,3 +1,9 @@
+> **Executive Auditor Brief (Zero-Code Summary)**:
+> * **What it stops**: Prevents AI/autonomous agent drift or prohibited semantic actions from touching core z/OS transactional state.
+> * **Where it sits**: Hard-gated at Byte-Zero *prior* to z/OS RRS Two-Phase Commit (`PREPARE`), via IBM z16 CEX8S / XCF memory bypass.
+> * **Audit artifact**: Generates tamper-evident 139-byte SMF cryptographic tombstones (SHA-256 state-roots) for SMF log ingestion.
+> * **For engineers**: Jump straight to `60-Second Local Verification` below.
+
 # GEF-DEM Verifier (z/OS Silicon Sovereignty)
 
 [![CI Multi-Vector](https://github.com/RootWerks/gef-dem-verifier/actions/workflows/verify.yml/badge.svg)](https://github.com/RootWerks/gef-dem-verifier/actions)
