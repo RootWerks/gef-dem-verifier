@@ -4,7 +4,6 @@ import json
 import sys
 import os
 
-# Ensure repo root is discoverable for binary schema imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from schema.smf_tombstone import SMFTombstone, SMF_TOMBSTONE_LEN
 
@@ -29,7 +28,6 @@ class GEFDEMSupervisorPoC:
         asid = payload.get("ASID", "0x00A1")
         jobname = payload.get("JOBNAME", "AGNTJOB1")[:8]
 
-        # Core Enforcement Conjunction evaluation
         op1_valid = delta <= self.delta_max_ms
         witness_valid = bool(e_token) and (drift_status == "EPOCH_SYNCHRONIZED")
         cat_allowed = semantic not in self.prohibited_categories
@@ -44,7 +42,6 @@ class GEFDEMSupervisorPoC:
                 subtype = 3
                 disp_int = 0xF003
 
-            # Construct binary tombstone model
             tombstone_obj = SMFTombstone(
                 record_type=subtype,
                 disposition=disp_int,
@@ -56,7 +53,6 @@ class GEFDEMSupervisorPoC:
             )
             packed_binary = tombstone_obj.pack()
 
-            # Diagnostic dict representation for debugging/CI output
             audit_dict = {
                 "SMFLEN": 40 + SMF_TOMBSTONE_LEN,
                 "SMFSTYP": f"0x0{subtype}",
@@ -72,15 +68,12 @@ class GEFDEMSupervisorPoC:
             }
             return {"verdict": "BITE", "audit_record": audit_dict}
 
-        # Clear precondition for RRS 2PC PREPARE
         return {
             "verdict": "CLEAR",
             "audit_record": None,
             "message": "Epistemic proof valid; cleared to touch RRS 2PC PREPARE."
         }
 
-
-# --- Execution Harness ---
 if __name__ == "__main__":
     supervisor = GEFDEMSupervisorPoC(delta_max_ms=10)
 
