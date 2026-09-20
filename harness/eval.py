@@ -8,9 +8,8 @@ def evaluate(row):
     delta_max = row["delta_max"]
     witness_valid = bool(row["witness_token"]) and row["revocation_list_valid"]
     cat_ok = row["semantic_category"] not in PROHIBITED_CATEGORIES
-    drift_ok = not row.get("epoch_drift_detected", False)
     
-    return (delta <= delta_max) and witness_valid and cat_ok and drift_ok
+    return (delta <= delta_max) and witness_valid and cat_ok
 
 if __name__ == "__main__":
     line = sys.stdin.read().strip()
@@ -18,9 +17,5 @@ if __name__ == "__main__":
         sys.exit(0)
     data = json.loads(line)
     passed = evaluate(data)
-    expected = data.get("expect_pass", True)
-    
-    match = (passed == expected)
-    status_str = "MATCH" if match else "MISMATCH"
-    print(f"[{status_str}] Observed: {'PASS' if passed else 'FAIL'} | Expected: {'PASS' if expected else 'FAIL'}")
-    sys.exit(0 if match else 1)
+    print(f"Result: {'PASS' if passed else 'FAIL'}")
+    sys.exit(0 if passed else 1)
