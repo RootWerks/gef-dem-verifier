@@ -10,7 +10,7 @@ Deterministic pre-silicon invariant verification and hardware-gated enforcement 
 ## Immediate Verification
 
 ```bash
-git clone [https://github.com/RootWerks/gef-dem-verifier.git](https://github.com/RootWerks/gef-dem-verifier.git)
+git clone https://github.com/RootWerks/gef-dem-verifier.git
 cd gef-dem-verifier
 python3 -m venv .venv
 source .venv/bin/activate
