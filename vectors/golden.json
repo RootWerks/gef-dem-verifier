@@ -1,18 +1,17 @@
 [
   {
-    "delta": 5,
-    "delta_max": 10,
-    "witness_token": "valid_tok_01",
-    "revocation_list_valid": true,
-    "semantic_category": "safe_mutation",
-    "expect_pass": true
+    "delta": 5, "delta_max": 10, "witness_token": "valid_tok_01",
+    "revocation_list_valid": true, "semantic_category": "safe_mutation",
+    "epoch_drift_detected": false, "expect_pass": true
   },
   {
-    "delta": 15,
-    "delta_max": 10,
-    "witness_token": "valid_tok_02",
-    "revocation_list_valid": true,
-    "semantic_category": "safe_mutation",
-    "expect_pass": false
+    "delta": 15, "delta_max": 10, "witness_token": "valid_tok_02",
+    "revocation_list_valid": true, "semantic_category": "safe_mutation",
+    "epoch_drift_detected": false, "expect_pass": false
+  },
+  {
+    "delta": 5, "delta_max": 10, "witness_token": "valid_tok_03",
+    "revocation_list_valid": true, "semantic_category": "safe_mutation",
+    "epoch_drift_detected": true, "expect_pass": false
   }
 ]
