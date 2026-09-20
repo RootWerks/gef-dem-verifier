@@ -1,3 +1,5 @@
+# GEF-DEM Verifier (z/OS Silicon Sovereignty)
+
 
 > **Executive Auditor Brief (Zero-Code Summary)**:
 > * **What it stops**: Prevents AI/autonomous agent drift or prohibited semantic actions from touching core z/OS transactional state.
@@ -5,21 +7,30 @@
 > * **Audit artifact**: Generates tamper-evident 139-byte SMF cryptographic tombstones (SHA-256 state-roots) for SMF log ingestion.
 > * **For engineers**: Jump straight to `60-Second Local Verification` below.
 
-# GEF-DEM Verifier (z/OS Silicon Sovereignty)
+
 
 [![CI Multi-Vector](https://github.com/RootWerks/gef-dem-verifier/actions/workflows/verify.yml/badge.svg)](https://github.com/RootWerks/gef-dem-verifier/actions)
 [![z/OS CEX Gate](https://img.shields.io/badge/hardware-CEX%2FXCF-blueviolet.svg)](https://github.com/RootWerks/gef-dem-verifier)
 
 Deterministic pre-silicon invariant verification and hardware-gated enforcement module for GEF/DEM. Replaces probabilistic AI drift with byte-zero hard stops (`0xF505`/`0xF003`) and 139-byte SMF cryptographic tombstones.
 
+<a id="immediate-verification"></a>
 ### 60-Second Local Verification
+### .Bash
     git clone https://github.com/RootWerks/gef-dem-verifier.git
     cd gef-dem-verifier
     python3 -m venv .venv
     source .venv/bin/activate
-    pip install -r requirements.txt
-    python eval.py --vector tests/vectors/drift_epistemic_0xf003.json --verify-smf
+    python harness/eval.py --vector vectors/drift_epistemic_0xf003.json --verify-smf
 
+<a id="immediate-verification"></a>
+### 60-Second Local Verification
+### Powershell
+    git clone https://github.com/RootWerks/gef-dem-verifier.git
+    cd gef-dem-verifier
+    python -m venv .venv
+    .venv\Scripts\Activate.ps1
+    python harness\eval.py --vector vectors\drift_epistemic_0xf003.json --verify-smf
 ---
 
 ## Core Architectural Invariant
