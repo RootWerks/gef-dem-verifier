@@ -1,0 +1,22 @@
+# .github/ISSUE_TEMPLATE/cex_integration_brief.yml
+name: Enterprise CEX / z/OS Co-Processor Inquiry
+description: Architecture audit briefing request for sovereign mainframe deployments.
+title: "[AUDIT-BRIEFING]: "
+body:
+  - type: input
+    attributes:
+      label: Institution / LPAR Context
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Cryptographic / Enforcement Target
+      options:
+        - IBM z16 CEX8S / ICSF
+        - XCF Memory Bypass Intercept
+        - SMF 139-byte Tombstone Pipeline Audit
+  - type: textarea
+    attributes:
+      label: Compliance / Drift Threshold Requirements ($\delta_{\max}$)
+    validations:
+      required: false
