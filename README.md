@@ -55,3 +55,11 @@ $$\text{Valid}(\delta \le \delta_{\max}) \land \text{WitnessValid}(F_{\text{toke
 *Cloud-native AI governance polices autonomous loops with sidecars, async telemetry, and hope. Big iron polices them with silicon hard stops.*
 
 **We believe in "Think".**
+
+## 60-Second Local Verification
+```bash
+git clone [https://github.com/RootWerks/gef-dem-verifier.git](https://github.com/RootWerks/gef-dem-verifier.git)
+cd gef-dem-verifier
+python3 -m venv .venv
+source .venv/bin/activate
+python harness/eval.py --vector vectors/drift_epistemic_0xf003.json --verify-smf
