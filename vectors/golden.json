@@ -1,0 +1,16 @@
+[
+  {
+    "delta": 5,
+    "delta_max": 10,
+    "witness_token": "valid_tok_01",
+    "revocation_list_valid": true,
+    "semantic_category": "safe_mutation"
+  },
+  {
+    "delta": 15,
+    "delta_max": 10,
+    "witness_token": "valid_tok_02",
+    "revocation_list_valid": true,
+    "semantic_category": "safe_mutation"
+  }
+]
