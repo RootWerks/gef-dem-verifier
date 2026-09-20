@@ -10,6 +10,5 @@ jobs:
       - name: Test Golden Vectors
         run: |
           cat vectors/golden.json | jq -c '.[]' | while read -r row; do
-            echo "--- Vector: $row"
-            echo "$row" | python3 harness/eval.py || true
+            echo "$row" | python3 harness/eval.py
           done

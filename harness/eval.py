@@ -17,5 +17,9 @@ if __name__ == "__main__":
         sys.exit(0)
     data = json.loads(line)
     passed = evaluate(data)
-    print(f"Result: {'PASS' if passed else 'FAIL'}")
-    sys.exit(0 if passed else 1)
+    expected = data.get("expect_pass", True)
+    
+    match = (passed == expected)
+    status_str = "MATCH" if match else "MISMATCH"
+    print(f"[{status_str}] Observed: {'PASS' if passed else 'FAIL'} | Expected: {'PASS' if expected else 'FAIL'}")
+    sys.exit(0 if match else 1)
