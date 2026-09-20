@@ -1,4 +1,5 @@
 # GEF-DEM Verifier (z/OS Silicon Sovereignty)
+
 [![CI Multi-Vector](https://github.com/RootWerks/gef-dem-verifier/actions/workflows/verify.yml/badge.svg)](https://github.com/RootWerks/gef-dem-verifier/actions)
 [![z/OS CEX Gate](https://img.shields.io/badge/hardware-CEX%2FXCF-blueviolet.svg)](https://github.com/RootWerks/gef-dem-verifier)
 
@@ -9,8 +10,10 @@ Deterministic pre-silicon invariant verification and hardware-gated enforcement 
 ## Immediate Verification
 
 ```bash
-git clone [https://github.com/RootWerks/gef-dem-verifier.git](https://github.com/RootWerks/gef-dem-verifier.git) && cd gef-dem-verifier
-python3 -m venv .venv && source .venv/bin/activate
+git clone [https://github.com/RootWerks/gef-dem-verifier.git](https://github.com/RootWerks/gef-dem-verifier.git)
+cd gef-dem-verifier
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 python eval.py --vector tests/vectors/drift_epistemic_0xf003.json --verify-smf
 
