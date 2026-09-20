@@ -1,4 +1,6 @@
 [Run 60-Second Local Verification](https://github.com/RootWerks/gef-dem-verifier#immediate-verification)
+
+
 > **Executive Auditor Brief (Zero-Code Summary)**:
 > * **What it stops**: Prevents AI/autonomous agent drift or prohibited semantic actions from touching core z/OS transactional state.
 > * **Where it sits**: Hard-gated at Byte-Zero *prior* to z/OS RRS Two-Phase Commit (`PREPARE`), via IBM z16 CEX8S / XCF memory bypass.
