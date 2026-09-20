@@ -1,4 +1,3 @@
-# .github/ISSUE_TEMPLATE/cex_integration_brief.yml
 name: Enterprise CEX / z/OS Co-Processor Inquiry
 description: Architecture audit briefing request for sovereign mainframe deployments.
 title: "[AUDIT-BRIEFING]: "
@@ -17,6 +16,6 @@ body:
         - SMF 139-byte Tombstone Pipeline Audit
   - type: textarea
     attributes:
-      label: Compliance / Drift Threshold Requirements ($\delta_{\max}$)
+      label: Compliance / Drift Threshold Requirements (delta_max)
     validations:
       required: false
