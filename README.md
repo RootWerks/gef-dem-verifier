@@ -1,11 +1,3 @@
-<a id="immediate-verification"></a>
-### 60-Second Local Verification
-    git clone https://github.com/RootWerks/gef-dem-verifier.git
-    cd gef-dem-verifier
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python harness/eval.py --vector vectors/drift_epistemic_0xf003.json --verify-smf
-
 
 > **Executive Auditor Brief (Zero-Code Summary)**:
 > * **What it stops**: Prevents AI/autonomous agent drift or prohibited semantic actions from touching core z/OS transactional state.
